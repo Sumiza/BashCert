@@ -13,7 +13,18 @@
 #
 #
 ##############################################################################
+# Generate the openssl.conf file so dont have to download seperately #########
 
+echo "[ req ]
+distinguished_name = req_distinguished_name
+
+[ req_distinguished_name ]
+
+
+[ SAN ]
+subjectAltName = $ENV::SUBJALTNAME" >> openssl.conf
+
+##############################################################################
 
 # ACME API to use
 API="https://acme-v02.api.letsencrypt.org"
@@ -452,6 +463,6 @@ else
 	echo
 fi
 
-
+rm openssl.conf
 log "Finished."
 
