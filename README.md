@@ -2,6 +2,11 @@
 Fork From https://gitlab.com/sinclair2/bacme
 ----------------------------------------
 
+Minor Changes:
+- Included the openssl.conf file in the script and it deletes it.
+- Added a wait time before token authentication as I needed it to propagate to another server.
+- Extended the validation timer as it kept coming back pending (might be a cloudflare or ipv6 issue I'm not sure but a longer wait fixed it).
+
 Documentation
 -------------
 
