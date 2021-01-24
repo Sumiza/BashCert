@@ -2,9 +2,6 @@
 Fork From https://gitlab.com/sinclair2/bacme
 ----------------------------------------
 
-bacme
-=====
-
 Documentation
 -------------
 
