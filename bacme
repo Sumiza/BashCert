@@ -356,7 +356,8 @@ else
 	log "Press [Enter] when done."
 	read -r
 fi
-
+#sleep to give time for .known to propagate
+sleep 90
 
 log "Responding to challenges ..."
 for (( i=0; i < ${#DOMAINS[@]}; i++ ))
@@ -370,7 +371,7 @@ log "OK"
 log "Waiting for validation ..."
 for attempt in 1 2 3 4 5
 do
-	sleep $((4*attempt))
+	sleep $((7*attempt))
 	RESPONSE="$(api_request "${ORDER_URL}" "")"
 	STATUS="$(echo "${RESPONSE}" | flatstring | sed 's/^.*"status"\:\ "\([^"]*\)".*$/\1/')"
 	log " check ${attempt}: status=${STATUS}"
